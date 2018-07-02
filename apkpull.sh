@@ -16,7 +16,7 @@ app_name=$1
 destination=$2
 
 # Find the package name 
-package_name=$(adb shell pm list packages | grep $app_name | cut -d ':' -f2)
+package_name=$(adb shell pm list packages | grep -i $app_name | cut -d ':' -f2)
 
 # Finds the path of the package
 apk_path=$(adb shell pm path $package_name | cut -d ':' -f2)
